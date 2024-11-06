@@ -20,22 +20,26 @@
       connect-src 'self';
     "
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./home.css" />
     <link
       rel="stylesheet"
       href="../../../node_modules/@phosphor-icons/web/src/regular/style.css"
     />
+
     <title>Cadastrar Cartões</title>
   </head>
   <body>
-    <div class="header">
-      <div id="nav">
-        <h1>Cadastrar Taxas</h1>
-        <button id="toggle-dark-mode"><i class="ph ph-sun"></i></button>
-      </div>
-    </div>
-    <div class="app">
+    <header>
+      <h1>Cadastrasr Taxas</h1>
+    </header>
+    <main>
       <aside>
         <h3>Taxas</h3>
         <div class="taxasButton">
@@ -46,7 +50,7 @@
           <input type="number" id="taxa1" placeholder="1º Taxa" />
         </div>
       </aside>
-      <main>
+      <div>
         <div class="container">
           <div>
             <label for="filialInput">Filial</label>
@@ -119,12 +123,14 @@
             />
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
+    <!-- Buttons Confirm & Reset -->
     <div class="confirm-reset">
       <button type="reset">Resetar</button>
       <button type="submit">Confirmar</button>
     </div>
+    <!-- Toast -->
     <div id="toast"></div>
     <!-- Modal -->
     <div id="modal" class="modal" style="display: none">

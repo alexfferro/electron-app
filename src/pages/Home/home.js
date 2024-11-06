@@ -1,6 +1,4 @@
 const taxasContainer = document.getElementById('taxasContainer')
-const toggleButton = document.getElementById('toggle-dark-mode');
-const icon = toggleButton.querySelector('i');
 const modal = document.getElementById('modal');
 const closeButton = document.querySelector('.close-button');
 const search = document.getElementById('search');
@@ -93,14 +91,6 @@ document.querySelector('button[type="submit"]').addEventListener('click', (event
 document.querySelector('button[type="reset"]').addEventListener('click', (event) => {
   event.preventDefault()
   limparCampos()
-})
-document.getElementById('toggle-dark-mode').addEventListener('click', async () => {
-  const isDarkMode = await window.darkMode.toggle()
-  if (isDarkMode) {
-    icon.classList.replace('ph-moon-stars', 'ph-sun');
-  } else {
-    icon.classList.replace('ph-sun', 'ph-moon-stars');
-  }
 })
 document.getElementById('addTaxa').addEventListener('click', () => {
   taxaCount++;

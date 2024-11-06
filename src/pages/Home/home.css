@@ -1,47 +1,11 @@
 :root {
   color-scheme: light dark;
   --bg-dark: #0f172a;
-  --bg-light: #f1f5f9;
-  --text-light: #020617;
-  --text-dark: #f8fafc;
+  --text: #f1f5f9;
+  --primary: #ea580c;
+  --confirm: #059669;
+  --remove: #dc2626;
   --shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    background: var(--bg-dark);
-    color: var(--text-dark);
-  }
-
-  button .ph {
-    background: var(--bg-dark);
-  }
-  select,
-  input {
-    background: var(--bg-light);
-    color: var(--text-light);
-  }
-  .input-wrapper {
-    background: var(--bg-light);
-    color: var(--text-dark);
-  }
-}
-@media (prefers-color-scheme: light) {
-  body {
-    background: var(--bg-light);
-    color: var(--text-light);
-  }
-  button .ph {
-    background: var(--bg-light);
-  }
-  select,
-  input {
-    background: var(--bg-dark);
-    color: var(--text-dark);
-  }
-  .input-wrapper {
-    background: var(--bg-light);
-    color: var(--text-light);
-  }
 }
 
 * {
@@ -49,164 +13,35 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 1rem;
-  max-height: 100%;
+  margin: 3rem;
+  max-height: 100vh;
+  background: var(--bg-dark);
+  color: var(--text);
 }
-
-#toggle-dark-mode .ph {
-  border: 1px solid #ccc;
-  font-size: 24px;
-  padding: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  outline: none;
-  border-radius: 99999px;
-}
-#toggle-dark-mode {
-  cursor: pointer;
-  background: none;
-  border: none;
-  outline: none;
-  width: 40px;
-}
-#toggle-dark-mode:hover {
-  filter: brightness(0.8);
-}
-.header {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 1rem;
-}
-.header #nav {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding-inline: 1rem;
-}
-
-select,
 input {
-  border-radius: 20px;
+  border-radius: 99999px;
   padding: 10px;
   width: 100%;
   display: flex;
-  appearance: none; /* Remove o chevron padrão */
-  -webkit-appearance: none; /* Para Safari */
-  -moz-appearance: none; /* Para Firefox */
   text-align: center;
-  border: none;
+  justify-content: center;
+  border: 1px solid var(--bg-light);
   margin: auto;
+  outline: none;
 }
-
-.app {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 1rem;
-  margin-top: 20px;
-  padding-inline: 1rem;
-}
-
-aside {
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-aside .taxasButton {
-  display: flex;
-  gap: 4px;
-  justify-content: space-around;
-  align-items: center;
-}
-aside .taxasButton button {
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-  background: none;
-}
-aside .taxasButton button .ph {
-  border: none;
-}
-#addTaxa {
-  color: rgb(62, 200, 62);
-}
-#addTaxa:hover {
+button:hover {
   filter: brightness(0.9);
 }
-#removeTaxa {
-  color: red;
-}
-#removeTaxa:hover {
-  filter: brightness(0.9);
-}
-#taxasContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
+/* App Structure */
 main {
   display: flex;
-  gap: 1rem;
-}
-.container label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-}
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 100%;
-  height: 20px;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-.confirm-reset {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 1rem;
-  display: flex;
-  gap: 1rem;
-}
-.confirm-reset button {
-  background: none;
-  margin-top: 1rem;
-  margin-right: 1rem;
-  padding-inline: 24px;
-  padding-block: 12px;
-  cursor: pointer;
-  border-radius: 24px;
-  font-size: 1rem;
-}
-.confirm-reset button:hover {
-  filter: brightness(0.9);
-}
-button[type="submit"] {
-  color: #3ec83e;
-  border: 2px solid #3ec83e;
-  margin: 1rem;
-}
-button[type="reset"] {
-  margin: 1rem;
-  color: red;
-  border: 2px solid red;
+  gap: 2rem;
 }
 
+/* App Structure */
+/* Toast */
 #toast {
   visibility: hidden;
   min-width: 250px;
@@ -229,37 +64,9 @@ button[type="reset"] {
   opacity: 1;
   bottom: 50px;
 }
+/* Toast */
 
-.input-wrapper {
-  display: flex;
-  background: var(--bg-light);
-  color: var(--text-dark);
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-}
-.input-wrapper input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  outline: none;
-}
-.input-wrapper .search-btn {
-  outline: none;
-  background: none;
-  border: none;
-}
-.input-wrapper .search-btn i {
-  padding: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
-.input-wrapper .search-btn i:hover {
-  filter: brightness(0.8);
-}
-
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -271,7 +78,6 @@ button[type="reset"] {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
 .modal-content {
   background-color: var(--bg-dark);
   margin: 5% auto;
@@ -282,7 +88,6 @@ button[type="reset"] {
   max-height: 90vh;
   overflow: auto;
 }
-
 .modal-content #searchItem {
   outline: none;
 }
@@ -294,22 +99,67 @@ button[type="reset"] {
   flex-direction: column;
   gap: 1rem;
 }
-
 .modal-content li:hover {
   filter: brightness(0.7);
   cursor: pointer;
 }
+/* Modal */
 
+/* Buttons */
+aside .taxasButton button {
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+}
+aside .taxasButton button .ph {
+  border: none;
+}
+#addTaxa {
+  color: var(--confirm);
+}
+#removeTaxa {
+  color: var(--remove);
+}
+
+.confirm-reset {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.confirm-reset button {
+  background: none;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  padding-inline: 24px;
+  padding-block: 12px;
+  cursor: pointer;
+  border-radius: 24px;
+  font-size: 1rem;
+}
+button[type="submit"] {
+  color: var(--confirm);
+  border: 2px solid var(--confirm);
+  margin: 1rem;
+}
+button[type="reset"] {
+  margin: 1rem;
+  color: var(--remove);
+  border: 2px solid var(--remove);
+}
 .close-button {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
-
 .close-button:hover,
 .close-button:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
+/* Buttons */
