@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+      default-src 'self';
+      style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+      font-src 'self' https://fonts.gstatic.com;
+      connect-src 'self';
+    "
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="
+      default-src 'self';
+      style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+      font-src 'self' https://fonts.gstatic.com;
+      connect-src 'self';
+    "
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./home.css" />
+    <link
+      rel="stylesheet"
+      href="../../../node_modules/@phosphor-icons/web/src/regular/style.css"
+    />
+    <title>Cadastrar Cartões</title>
+  </head>
+  <body>
+    <div class="header">
+      <div id="nav">
+        <h1>Cadastrar Taxas</h1>
+        <button id="toggle-dark-mode"><i class="ph ph-sun"></i></button>
+      </div>
+    </div>
+    <div class="app">
+      <aside>
+        <h3>Taxas</h3>
+        <div class="taxasButton">
+          <button id="addTaxa"><i class="ph ph-plus-circle"></i></button>
+          <button id="removeTaxa"><i class="ph ph-minus-circle"></i></button>
+        </div>
+        <div id="taxasContainer">
+          <input type="number" id="taxa1" placeholder="1º Taxa" />
+        </div>
+      </aside>
+      <main>
+        <div class="container">
+          <div>
+            <label for="filialInput">Filial</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="filialInput"
+                placeholder="Selecionar Filial..."
+              />
+              <button id="searchFilialButton" class="search-btn">
+                <i class="ph ph-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+          <div>
+            <label for="cartaoInput">Cartão</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="cartaoInput"
+                placeholder="Selecionar um Cartão..."
+              />
+              <button id="searchCartaoButton" class="search-btn">
+                <i class="ph ph-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+          <div>
+            <label for="fornecedorInput">Fornecedor</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="fornecedorInput"
+                placeholder="Selecionar fornecedor..."
+              />
+              <button id="searchFornecedorButton" class="search-btn">
+                <i class="ph ph-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+          <div>
+            <label for="contaBancariaInput">Conta Bancaria</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="contaBancariaInput"
+                placeholder="Selecionar uma conta bancaria..."
+              />
+              <button id="searchContaBancariaButton" class="search-btn">
+                <i class="ph ph-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+          <div>
+            <label for="diasAPagar">Dias a Pagar</label>
+            <input
+              type="number"
+              id="diasAPagar"
+              placeholder="Dias a Pagar"
+              required
+            />
+          </div>
+          <div>
+            <label for="demaisParcelas">Demais Parcelas</label>
+            <input
+              required
+              type="number"
+              id="demaisParcelas"
+              placeholder="Demais Parcelas"
+            />
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="confirm-reset">
+      <button type="reset">Resetar</button>
+      <button type="submit">Confirmar</button>
+    </div>
+    <div id="toast"></div>
+    <!-- Modal -->
+    <div id="modal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <input type="search" id="searchItem" />
+        <ul id="search"></ul>
+      </div>
+    </div>
+    <script src="./home.js"></script>
+  </body>
+</html>

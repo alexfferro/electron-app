@@ -11,3 +11,8 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
     ipcRenderer.send(channel, data)
   }
 })
+contextBridge.exposeInMainWorld('api', {
+  onConnections: (callback) => ipcRenderer.on('connections', (event, connections) => callback(connections)),
+  selectConnection: (config) => ipcRenderer.send('select-connection', config),
+  buscarDados: () => ipcRenderer.send('buscar-dados')
+});

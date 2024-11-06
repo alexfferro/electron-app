@@ -1,9 +1,9 @@
 {
-  "name": "my-electron-app",
-  "version": "1.0.0",
-  "description": "Hello World!",
+  "name": "plussoft-cartoes",
+  "version": "1.1.0",
+  "description": "an application for create and update cards in shop9",
   "main": "main.js",
-  "author": "Jane Doe",
+  "author": "Alex Ferro",
   "license": "MIT",
   "devDependencies": {
     "@electron-forge/cli": "^7.5.0",
